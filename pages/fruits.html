@@ -299,17 +299,36 @@ margin-right:15px; }
 
         height:calc(100vh - 185px);
         overflow-y:auto;
+        overflow-x:hidden;
 
         scrollbar-width:none;
     }
 
    .left-menu{
-    width:95px;
-    top:0;
-    height:auto;
-    overflow:visible;
-    flex-shrink:0;
-}
+        width:95px;
+        top:0;
+        height:auto;
+        overflow:visible;
+        flex-shrink:0;
+   }
+
+    .products-area{
+        flex:1;
+        min-width:0;
+        width:0;              /* ADD THIS */
+        margin-left:10px;     /* ADD THIS */
+    }
+
+    .products-grid{
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    .product-card{
+        min-width:0;          /* ADD THIS */
+        width:100%;           /* ADD THIS */
+    }
 
     .menu-item{
         padding:14px 5px;
@@ -1450,7 +1469,6 @@ margin-right:15px; }
     font-size:15px;
     font-weight:700;
 }
-
 </style>
 </head>
 <body>
@@ -1560,25 +1578,7 @@ margin-right:15px; }
     </div>
 
 </div>
-<div class="floating-cart-bar">
 
-    <div class="cart-items-preview">
-
-        <img src="images/product1.png" class="cart-preview-img">
-        <img src="images/product2.png" class="cart-preview-img">
-
-    </div>
-
-    <div class="cart-info">
-        <div class="cart-count">2 Items</div>
-        <div class="cart-total">₹160</div>
-    </div>
-
-    <button class="view-cart-btn">
-        View Cart
-    </button>
-
-</div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const supabaseUrl = "https://izoipzriynkcjtwuzrfu.supabase.co";
